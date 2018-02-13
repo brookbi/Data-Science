@@ -1,0 +1,29 @@
+When I first pored over the data, I was very frustrated with the little errors, gaps, and typos present within the data. 
+
+The first step taken to clean the data involved making a sub-dataframe constructed of only numerically significant
+and quantifiable data - for instance, columns with the URL for the movie poster and imdb's tracker number were 
+stripped and reshaped into an index based on the title of the movie. 
+
+Secondly, I deleted rows with empty Budget and Box Office Gross using dropna and pd.notnull , since it would be impossible to judge the profitability
+of movies without these values. 
+
+After removing these empty columns, I decided it was time to try pulling inital values and summary statistics from the datasets. However, I immediately 
+noticed a series of errors present in the Budget and Box Office Gross columns. After seeing some movies with foreign-sounding titles gross and cost 
+hundreds of billions of dollars, I realized that not every value in the box was filled in with USD. By filtering out those with text (many of these
+foreign values were accompanied by CAD or other foreign currency labels) and cross-checking the values over 300 million USD (deleting those that 
+didn't align with their manually identified values) I deleted multiple foreign films from the dataset. While in the grand scheme this may lower the 
+external validity of these statistics, the effect is small, and the target audience for this study is domestic. 
+
+Rather annoyingly, some of the Budget and Box Office Gross cells simply had values of 0, while others had strange string labels like "gross but
+totally worth your time". While I'm not sure how those values got there, those had to be filtered out by looking for values that couldn't be turned
+into strings. 
+
+At this point, I was able to take away median and mean information from the budgets and revenues, as well as derive the profitability (revenue/budget)
+of each remaining movie in the set. However, in order to take meaningful insights away from what was available, the next step was to do the same 
+steps of filtration for other columns in the dataset - this involved things like detecting and fixing typos in Actor and Director names and 
+deleting superfluous release dates in order to convert them to datetime format.
+
+Lastly, in order to wrangle the categorical data into meaningful insights, I started creating dummy variables for censorship ratings (e.g. PG-13, R, G) 
+and movie genres (Adventure, Action, Comedy) - after checking for typos and values that fell through the cracks, of course. Thankfully, the movies in 
+the set were only labeled with 10 or so genres, so the number of dummy variables that needed to be created was not exorbitant. Following all of these 
+steps, the movieset data was finally ready to analyze!
