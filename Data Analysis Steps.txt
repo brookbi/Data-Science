@@ -1,0 +1,28 @@
+There is a statistically significant difference between movies with no 
+
+First, I explored any possible influence that different release dates might have on revenue. I performed some simple 
+A/B testing to compare the seasons to each other, determining that summer tends to outrank the other seasons on profitability, with a p score of 
+0.17 compared to winter (the lowest season). 
+
+Using the same logic, I subsetted movies release around the timeline of major holidays in the U.S. and cross-tabulated how profitable movies 
+were when released right before these major holiday seasons. These results surprised me, as they indicated that movies released around July 4th and
+Christmas performed significantly better than movies released around other holidays - in fact, movies released around Valentine's Day, Halloween, 
+and Thanksgiving tended to *underperform* when compared to the average movie release date. 
+
+Using the same paired t-tests, I compared the movies with an "Actor Score" (derived value of the count of famous actors obtained by matching the 
+listed actors with the top 100 actors of all time) of 1, 2, and 3 with those with a score of 0. The median profitability for each subset were 
+compared, and it was determined that movies with more famous actors are generally more profitable, with the largest marginal increase between 
+0 and 1 famous actors. Thus, it appears that having even a little starpower can have a great effect on movie profitability, though the mediating 
+factor here could be a larger budget, considering that it takes a bigger budget to support famous actors.
+
+A similar test showed that having a director score of anything greater than 0 (score this time was based on a tiered system matching with the top 
+50 directors of all time, with the top 10 most famous receiving the highest director score of 5, the next ten receiving a 4, the next ten receiving
+a 3, etc.), though the effect of whether a director was in the top 10 vs. the top 50 didn't seemed to matter significantly in the bottom line.
+
+Another visual exploratory analysis compared whether runtimes might be distributed differently between movies considered "successful" vs. movies
+that could be considered financially "unsuccessful". Movies were compiled according to whether they had a profitability ratio of 1 and above or not. 
+These sets were then plotted across multiple variables to notice differences in spread. When runtimes were plotted on the x axis, there was a 
+slight difference in distributions, with more successful movies tending to be shorter in length. Using the same distribution analysis, I 
+created an exploratory plot comparing the distribution of budget size relative to profitability, possibly suggesting that bigger budget movies 
+tend to be more successful than smaller budget ones.
+
