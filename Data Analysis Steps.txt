@@ -1,5 +1,3 @@
-There is a statistically significant difference between movies with no 
-
 First, I explored any possible influence that different release dates might have on revenue. I performed some simple 
 A/B testing to compare the seasons to each other, determining that summer tends to outrank the other seasons on profitability, with a p score of 
 0.17 compared to winter (the lowest season). 
